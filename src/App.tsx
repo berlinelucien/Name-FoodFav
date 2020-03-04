@@ -18,9 +18,8 @@ export class App extends React.Component<{}, AppState> {
       <div>
         <ul>
           {this.state.list.map((value: string, index: number) => {
-            return <li>{value}</li>;
+            return <li key={index}>{value}</li>;
           })}
-          <li>{this.inputValue}</li>
         </ul>
         <form onSubmit={this.submitForm}>
           <input type="text" onChange={this.changeInputValue} />
@@ -29,13 +28,18 @@ export class App extends React.Component<{}, AppState> {
     );
   }
 
-  private inputValue: string = "pizza";
+  private inputValue: string = "";
 
   private changeInputValue = (event: React.ChangeEvent<HTMLInputElement>) => {
     this.inputValue = event.target.value;
   };
 
-  private submitForm = () => {
-    alert(this.inputValue);
+  private submitForm = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const newList: Array<string> = Object.assign([], this.state.list);
+    newList.push(this.inputValue);
+    this.setState({
+      list: newList
+    });
   };
 }
