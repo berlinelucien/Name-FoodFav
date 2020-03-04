@@ -12,6 +12,7 @@ export class App extends React.Component<{}, AppState> {
       list: ["apples", "oranges", "pears"]
     };
   }
+
   render() {
     return (
       <div>
@@ -19,8 +20,22 @@ export class App extends React.Component<{}, AppState> {
           {this.state.list.map((value: string, index: number) => {
             return <li>{value}</li>;
           })}
+          <li>{this.inputValue}</li>
         </ul>
+        <form onSubmit={this.submitForm}>
+          <input type="text" onChange={this.changeInputValue} />
+        </form>
       </div>
     );
   }
+
+  private inputValue: string = "pizza";
+
+  private changeInputValue = (event: React.ChangeEvent<HTMLInputElement>) => {
+    this.inputValue = event.target.value;
+  };
+
+  private submitForm = () => {
+    alert(this.inputValue);
+  };
 }
