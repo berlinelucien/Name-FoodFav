@@ -1,19 +1,26 @@
 import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
 
-export class App extends React.Component {
+interface AppState {
+  list: Array<string>;
+}
+
+export class App extends React.Component<{}, AppState> {
+  constructor(props: any) {
+    super(props);
+    this.state = {
+      list: ["apples", "oranges", "pears"]
+    };
+  }
   render() {
     return (
-      <div className="App">
+      <div>
         <ul>
-          <li>cheese</li>
-          <li>peeper</li>
-          <li>pizza</li>
+          {this.state.list.map((value: string, index: number) => {
+            return <li>{value}</li>;
+          })}
         </ul>
       </div>
     );
   }
 }
-
-export default App;
