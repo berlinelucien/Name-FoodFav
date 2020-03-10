@@ -5,7 +5,12 @@ interface AppState {
   list: Array<string>;
 }
 
-export class App extends React.Component<{}, AppState> {
+interface AppProps {
+  list: Array<string>
+  addListItem: (item: string) => void;
+}
+
+export class App extends React.Component<AppProps, AppState> {
   constructor(props: any) {
     super(props);
     this.state = {
@@ -17,7 +22,7 @@ export class App extends React.Component<{}, AppState> {
     return (
       <div>
         <ul>
-          {this.state.list.map((value: string, index: number) => {
+          {this.props.list.map((value: string, index: number) => {
             return <li key={index}>{value}</li>;
           })}
         </ul>
@@ -36,10 +41,6 @@ export class App extends React.Component<{}, AppState> {
 
   private submitForm = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const newList: Array<string> = Object.assign([], this.state.list);
-    newList.push(this.inputValue);
-    this.setState({
-      list: newList
-    });
+    this.props.addListItem(this.inputValue);
   };
 }
