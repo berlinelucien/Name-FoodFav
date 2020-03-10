@@ -1,8 +1,9 @@
 import { connect } from "react-redux";
 import { App } from "./App";
 import { addListItem } from "./actions";
+import { AppState } from "./Reducer";
 
-const mapStateToProps = (state: any) => {
+const mapStateToProps = (state: AppState) => {
     return {
         list: state.list
     };
