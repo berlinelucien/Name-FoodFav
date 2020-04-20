@@ -20,7 +20,7 @@ enum color {
 }
 let textColor: color = color.green;
 console.log(`textColor: ${textColor}`);
-// show that textColor can't be assigned anything else
+// To-do: show that textColor can't be assigned anything else
 
 //Array
 const scores = [1, 2, 3];
