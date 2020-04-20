@@ -7,7 +7,7 @@ console.log(myNumber);
 //const vs let;
 const constantNumber: number = 2;
 //constantNumber = 3;
-// won't work use let instead
+// To-do: constant doesn't work won't work use let instead
 
 //Enums
 enum color {
@@ -38,7 +38,7 @@ console.log(add(2,3))
 //Anonymous function
 let added = function(x: number, y: number) {return x + y};
 
-//Create more basic arithmetic functions to practice
+//To-do: Create more basic arithmetic functions to practice
 
 
 //3333333333333333
@@ -61,7 +61,7 @@ copyRect.width = 10;
 console.log(`copyRect.width: ${copyRect.width}`);
 console.log(`rectangle.width: ${rectangle.width}`);
 
-//interface
+//Interface
 //Show Purpose requiring type in function and attempting to send in wrong object
 
 interface alien {
@@ -98,7 +98,7 @@ const majin: alien = {
   powerLevel: 1000000
 };
 
-//show that this doesn't work
+//To-do: show that this doesn't work
 //const strongerAlien = getStrongerAlien(namekian, saiyan);
 const strongestAlien = getStrongerAlien(namekian, majin);
 console.log(`Strongest Alien: ${strongestAlien.name}`);
@@ -106,9 +106,9 @@ console.log(`Strongest Alien: ${strongestAlien.name}`);
 //4444444444444444444
 //Class
 
-//move all arithmetic functions here without passing in values
-// add private variables
-// explain constructor
+// To-do: move all arithmetic functions here without passing in values
+// To-do: add private variables
+// To-do: explain constructor
 class Calculator {
   a: number;
   b: number;
