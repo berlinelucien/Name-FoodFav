@@ -2,7 +2,7 @@ import React from 'react'
 import './MenuButton.css';
 import icon from './menu-icon.png'
 
-type MenuProps = {
+interface MenuProps {
     handleMouseDown: any
 }
 

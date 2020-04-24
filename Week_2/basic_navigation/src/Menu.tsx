@@ -1,7 +1,7 @@
 import React from "react"
 import "./Menu.css"
 
-type MenuProps = {
+interface MenuProps {
   handleMouseDown: any
   menuVisibility: boolean
 };
