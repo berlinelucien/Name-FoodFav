@@ -6,14 +6,7 @@ interface MenuProps {
   menuVisibility: boolean
 };
 
-export default class Menu extends React.Component {
-  props: MenuProps
-
-  constructor(props: MenuProps) {
-    super(props)
-    this.props = props
-  }
-
+export default class Menu extends React.Component<MenuProps> {
   render() {
     var className = this.props.menuVisibility ? "show" : "hide"
 
