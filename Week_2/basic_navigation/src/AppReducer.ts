@@ -1,4 +1,4 @@
-import { MenuActions, TOGGLE_MENU } from "./MenuActions";
+import { MenuActions, TOGGLE_MENU } from "./menu/MenuActions";
 import { combineReducers } from "redux";
 
 export interface AppState {
