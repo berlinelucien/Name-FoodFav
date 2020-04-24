@@ -1,26 +1,17 @@
-import React from 'react'
-import './App.css'
-import MenuButton from "./menu/MenuButton"
-import Menu from "./menu/Menu"
+import React from "react";
+import "./App.css";
+import MenuButton from "./menu/MenuButton";
+import Menu from "./menu/Menu";
 
-interface MenuContainerProps {
-  // MenuContainer Properties
+export interface MenuContainerProps {
+  menuVisible: boolean;
+  toggleMenu: (visible: boolean) => void;
 }
 
-interface MenuConstainerState {
-  visible: boolean
-}
-
-class App extends React.Component {
-  state: MenuConstainerState
-
+class App extends React.Component<MenuContainerProps> {
   constructor(props: MenuContainerProps) {
-    super(props)
-
-    this.state = { visible: false }
-
-    this.handleMouseDown = this.handleMouseDown.bind(this)
-    this.toggleMenu = this.toggleMenu.bind(this)
+    super(props);
+    this.handleMouseDown = this.handleMouseDown.bind(this);
   }
 
   render() {
@@ -29,22 +20,16 @@ class App extends React.Component {
         <MenuButton handleMouseDown={this.handleMouseDown} />
         <Menu
           handleMouseDown={this.handleMouseDown}
-          menuVisibility={this.state.visible}
+          menuVisibility={this.props.menuVisible}
         />
       </div>
-    )
+    );
   }
 
   handleMouseDown(e: MouseEvent) {
-    this.toggleMenu()
-    e.stopPropagation()
-  }
-
-  toggleMenu() {
-    this.setState({
-      visible: !this.state.visible,
-    })
+    this.props.toggleMenu(this.props.menuVisible);
+    e.stopPropagation();
   }
 }
 
-export default App
+export default App;

@@ -1,7 +1,7 @@
 import { MenuActions, TOGGLE_MENU } from "./MenuActions";
 import { combineReducers } from "redux";
 
-export interface State {
+export interface AppState {
   menuVisible: boolean;
 }
 
@@ -9,12 +9,12 @@ export const initialState = {
   menuVisible: false,
 };
 
-function toggleMenu(state: State = initialState, action: MenuActions): State {
+function toggleMenu(state: AppState = initialState, action: MenuActions): AppState {
   switch (action.type) {
     case TOGGLE_MENU:
       return {
         ...state,
-        menuVisible: action.visible,
+        menuVisible: !state.menuVisible,
       };
     default:
       return state;

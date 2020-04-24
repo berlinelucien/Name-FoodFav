@@ -15,17 +15,13 @@ export default class Menu extends React.Component {
   }
 
   render() {
-    var visibility = "hide"
-
-    if (this.props.menuVisibility) {
-      visibility = "show"
-    }
+    var className = this.props.menuVisibility ? "show" : "hide"
 
     return (
       <div
         id="sideMenu"
         onMouseDown={this.props.handleMouseDown}
-        className={visibility}
+        className={className}
       >
         <h2>
           <a href="#">Home</a>
