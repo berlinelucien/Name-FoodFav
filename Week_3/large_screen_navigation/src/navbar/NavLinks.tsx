@@ -1,24 +1,23 @@
 import React from "react";
 import "./NavLinks.css";
 
-export default class NavLinks extends React.Component {
+interface NavLinksProps {
+  menuItems: Array<string>;
+}
+
+export default class NavLinks extends React.Component<NavLinksProps> {
   render() {
+    const listItems = this.props.menuItems.map((item) => {
+      return (
+        <li>
+          <a href="#">{item}</a>
+        </li>
+      );
+    });
+
     return (
       <div id="navlinks">
-        <ul>
-          <li>
-            <a href="#">Home</a>
-          </li>
-          <li>
-            <a href="#">Home</a>
-          </li>
-          <li>
-            <a href="#">Home</a>
-          </li>
-          <li>
-            <a href="#">Home</a>
-          </li>
-        </ul>
+        <ul>{listItems}</ul>
       </div>
     );
   }

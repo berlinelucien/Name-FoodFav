@@ -1,14 +1,23 @@
-import React from "react"
-import "./Menu.css"
+import React from "react";
+import "./Menu.css";
 
 interface MenuProps {
-  handleMouseDown: any
-  menuVisibility: boolean
-};
+  handleMouseDown: any;
+  menuVisibility: boolean;
+  menuItems: Array<string>;
+}
 
 export default class Menu extends React.Component<MenuProps> {
   render() {
-    var className = this.props.menuVisibility ? "show" : "hide"
+    var className = this.props.menuVisibility ? "show" : "hide";
+
+    const listItems = this.props.menuItems.map((item) => {
+      return (
+        <h2>
+          <a href="#">{item}</a>
+        </h2>
+      );
+    });
 
     return (
       <div
@@ -16,19 +25,8 @@ export default class Menu extends React.Component<MenuProps> {
         onMouseDown={this.props.handleMouseDown}
         className={className}
       >
-        <h2>
-          <a href="#">Home</a>
-        </h2>
-        <h2>
-          <a href="#">Products</a>
-        </h2>
-        <h2>
-          <a href="#">Accessories</a>
-        </h2>
-        <h2>
-          <a href="#">Settings</a>
-        </h2>
+        {listItems}
       </div>
-    )
+    );
   }
 }

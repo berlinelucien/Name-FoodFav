@@ -19,11 +19,12 @@ class App extends React.Component<MenuContainerProps> {
     return (
       <div className="App">
         <div id="navbar">
-        <NavLinks />
+        <NavLinks menuItems={this.menuItems()} />
         <MenuButton handleMouseDown={this.handleMouseDown} />
         <Menu
           handleMouseDown={this.handleMouseDown}
           menuVisibility={this.props.menuVisible}
+          menuItems={this.menuItems()}
         />
         </div>
       </div>
@@ -33,6 +34,10 @@ class App extends React.Component<MenuContainerProps> {
   handleMouseDown(e: MouseEvent) {
     this.props.toggleMenu(this.props.menuVisible);
     e.stopPropagation();
+  }
+
+  menuItems(): Array<string> {
+    return ['Home', 'Products', 'Accessories', 'Settings']
   }
 }
 

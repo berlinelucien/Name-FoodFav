@@ -2,11 +2,11 @@ import React from 'react'
 import './MenuButton.css';
 import icon from './menu-icon.png'
 
-interface MenuProps {
+interface MenuButtonProps {
     handleMouseDown: any
 }
 
-export default class MenuButton extends React.Component<MenuProps> {
+export default class MenuButton extends React.Component<MenuButtonProps> {
     render() {
         return <button id="menuButton" onMouseDown={this.props.handleMouseDown}><img src={icon} alt="menu-button" /></button>
     }
