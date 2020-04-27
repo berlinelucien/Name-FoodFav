@@ -14,17 +14,17 @@ test("all stores should return", () => {
   expect(allStores).toHaveLength(9);
 });
 
-test("stores for a specific city", () => {
-  // 1. Write a unit test to call the storesForCity() function
+test("stores for a specific city e.g. Seattle", () => {
+  // 1. Write a unit test to call the storesForCity() function with a city
   // 2. Assert (or expect) the return value to have a certain array length
 });
 
-test("stores for a list of cities", () => {
-  // 1. Write a unit test to call the storesForCities() function
+test("stores for a list of cities e.g. ['Seattle', 'Bellevue']", () => {
+  // 1. Write a unit test to call the storesForCities() function with an array of cities
   // 2. Assert (or expect) the return value to have a certain array length
 });
 
 test("store by name", () => {
-  // 1. Write a unit test to call the store() function
+  // 1. Write a unit test to call the store() function with a store name
   // 2. Assert (or expect) the return value to have a certain array length
 });
