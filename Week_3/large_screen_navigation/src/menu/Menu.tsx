@@ -1,31 +1,33 @@
 import React from "react";
 import "./Menu.css";
+import { NavLink } from "react-router-dom";
+import MenuLink from "../navbar/MenuLink";
 
 interface MenuProps {
   handleMouseDown: any;
   menuVisibility: boolean;
-  menuItems: Array<string>;
+  menuItems: MenuLink[];
 }
 
 export default class Menu extends React.Component<MenuProps> {
   render() {
     var className = this.props.menuVisibility ? "show" : "hide";
 
-    const listItems = this.props.menuItems.map((item) => {
-      return (
-        <h2>
-          <a href="#">{item}</a>
-        </h2>
-      );
-    });
-
     return (
-      <div
-        id="sideMenu"
-        onMouseDown={this.props.handleMouseDown}
-        className={className}
-      >
-        {listItems}
+      <div id="sideMenu" className={className}>
+        {this.props.menuItems.map((value, index) => {
+          if (value.link == '/') {
+            return <NavLink exact to={value.link} onClick={this.props.handleMouseDown}>
+              {value.name}
+            </NavLink>
+          } else {
+            return (
+              <NavLink to={value.link} onClick={this.props.handleMouseDown}>
+                {value.name}
+              </NavLink>
+            );
+          }
+        })}
       </div>
     );
   }

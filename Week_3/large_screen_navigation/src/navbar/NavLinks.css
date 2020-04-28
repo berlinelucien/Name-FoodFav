@@ -1,16 +1,16 @@
-#navlinks ul {
+#navlinks {
     display: flex;
-    align-items: center;
     justify-content: flex-start;
-    list-style-type: none;
-    margin: 10px 0;
-}
-
-#navlinks li {
-    margin: 0 10px;
+    margin: 0 20px;
 }
 
 #navlinks a {
     color: white;
     text-decoration: none;
+    margin: 10px 20px;
+    font-weight: normal;
+}
+
+#navlinks .active {
+    color: black;
 }

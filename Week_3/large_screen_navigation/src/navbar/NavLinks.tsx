@@ -1,23 +1,23 @@
 import React from "react";
 import "./NavLinks.css";
+import { NavLink } from "react-router-dom";
+import MenuLink from "./MenuLink";
 
 interface NavLinksProps {
-  menuItems: Array<string>;
+  menuItems: MenuLink[];
 }
 
 export default class NavLinks extends React.Component<NavLinksProps> {
   render() {
-    const listItems = this.props.menuItems.map((item) => {
-      return (
-        <li>
-          <a href="#">{item}</a>
-        </li>
-      );
-    });
-
     return (
       <div id="navlinks">
-        <ul>{listItems}</ul>
+        {this.props.menuItems.map((value, index) => {
+          if (value.link == '/') {
+            return <NavLink exact to={value.link}>{value.name}</NavLink>
+          } else {
+            return <NavLink to={value.link}>{value.name}</NavLink>
+          }
+        })}
       </div>
     );
   }
