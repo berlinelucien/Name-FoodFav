@@ -19,9 +19,18 @@
   overflow: hidden;
 }
   
-#sideMenu h2 a {
+#sideMenu {
+  flex-direction: column;
+  display: flex;
+}
+
+#sideMenu a {
   color: #fff;
   font-size: 32px;
-  margin-left: 15px;
+  margin: 20px 0px;
   text-decoration: none;
+}
+
+#sideMenu a:visited {
+  color: #fff;
 }
