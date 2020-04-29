@@ -1,0 +1,22 @@
+#keywordCollection {
+    display: flex;
+    flex-flow: row wrap;
+    width: 450px;
+    background-color: gray;
+    margin: 10px 10px
+}
+
+#keywordCollection p {
+    margin: 10px 5px;
+    padding: 10px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+#nineteen {
+    flex-grow: 2;
+}
+
+#twenty {
+    flex-grow: 1;
+}
