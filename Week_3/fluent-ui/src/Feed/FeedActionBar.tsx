@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./FeedActionBar.css";
-import { IIconProps, IconButton } from "@fluentui/react";
+import { IconButton } from "@fluentui/react";
 
 interface FeedActionBarProps {}
 

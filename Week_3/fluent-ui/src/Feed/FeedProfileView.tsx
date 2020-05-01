@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Persona, IPersonaSharedProps } from "@fluentui/react";
+import { Persona } from "@fluentui/react";
 import "./FeedProfileView.css";
 
 export interface FeedProfileViewProps {
