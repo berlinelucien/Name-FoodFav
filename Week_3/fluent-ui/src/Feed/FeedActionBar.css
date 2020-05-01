@@ -1,6 +1,26 @@
 #feed-action-bar {
-    background-color: green;
     display: flex;
     flex-direction: row;
     height: 50px;
+    justify-content: flex-start;
+}
+
+#feed-action-bar #primary-actions {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-grow: 3;
+    align-items: center;
+}
+
+#feed-action-bar #secondary-actions {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    flex-grow: 1;
+    align-items: center;
+}
+
+#feed-action-bar #second-button {
+    font-size: 30px;
 }
