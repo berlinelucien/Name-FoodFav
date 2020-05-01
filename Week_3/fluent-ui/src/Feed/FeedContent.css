@@ -1,0 +1,6 @@
+#feed-content {
+    background-color: pink;
+    display: flex;
+    flex-direction: row;
+    height: 250px;    
+}
