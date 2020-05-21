@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Matchimoji</title>
+        <link rel="stylesheet" href="./app.css" />
+    </head>
+    <body>
+        <header id="header">
+            <p id="title">Match the pair of Emojis!!</p>
+        </header>
+        <navbar id="navbar">
+            <button id="reset-btn" class="btn">Reset</button>
+            <p id="game-status">Progress: 0%</p>
+            <div>
+                <button id="easy-mode" class="btn">Easy</button>
+                <button id="hard-mode" class="btn">Hard</button>
+            </div>
+        </navbar>
+        <section id="main">
+            <div id="container">
+                <div class="row">
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                </div>
+                <div class="row">
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                </div>
+                <div class="row">
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                </div>
+                <div id="last-row" class="row">
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                </div>
+            </div>
+        </section>
+        <footer id="footer">
+            <p id="footer-text">@TNT 2020</p>
+        </footer>
+
+        <script src="https://unpkg.com/emojisplosion/lib/global.js"></script>
+        <script src="./app.js"></script>
+    </body>
+</html>

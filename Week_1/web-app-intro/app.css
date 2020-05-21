@@ -1,0 +1,113 @@
+body, p {
+    margin: 0px;
+    padding: 0px;
+}
+
+#header {
+    height: 50px;
+    position: sticky;
+    background: rgb(82, 69, 153);
+    display: flex;
+    justify-content: center;
+}
+
+#title {
+    margin: 0px;
+    align-self: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 30px;
+    color: rgb(216, 216, 216);
+}
+
+#navbar {
+    display: flex;
+    width: 60%;
+    justify-content: space-evenly;
+    margin: 0 auto;
+    height: 50px;
+    background-color: rgb(228, 228, 228);
+}
+
+#navbar>* {
+    align-self: center;
+}
+
+.btn {
+    background: none;
+    outline: none;
+    border: 1px solid rgb(83, 82, 82);
+    padding: 5px;
+    margin: 0;
+    border-radius: 5px;
+    cursor: pointer;
+    height: 30px;
+    width: 100px;
+}
+
+.btn:hover {
+    background: rgb(173, 173, 173);
+    color: white;
+}
+
+#game-status {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
+    width: 150px;
+}
+
+.clicked {
+    background: rgb(173, 173, 173);
+    color: white;
+}
+
+.row {
+    display: flex;
+    width: 80%;
+    margin: 20px auto;
+    justify-content: space-evenly;
+}
+
+.square {
+    width: 100px;
+    height: 100px;
+    border: 1px solid gray;
+    border-radius: 50%;
+    background-color: rgb(107, 117, 173);
+    cursor: pointer;
+    text-align: center;
+    line-height: 100px;
+    font-size: 40px;
+}
+
+.square:hover {
+    /* offset-x | offset-y | blur-radius | spread-radius | color */
+    box-shadow: 0px 0px 4px 4px rgba(0, 0, 0, 0.7);
+}
+
+.square:nth-child(1) {
+    background: #F25022;
+}
+
+.square:nth-child(2) {
+    background: #7FBA00;
+}
+
+.square:nth-child(3) {
+    background: #FFB900;
+}
+
+.square:nth-child(4) {
+    background: #00A4EF;
+}
+
+#footer {
+    width: 100%;
+    /* position: fixed;
+    bottom: 0; */
+}
+
+#footer-text {
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 0px;
+}
