@@ -1,0 +1,23 @@
+.card-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    list-style: none;
+}
+
+.card {
+    width: 150px;
+    height: 150px;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#completed-false {
+    background-color: yellow;
+}
+
+#completed-true {
+    background-color: green;
+    color: white;
+}

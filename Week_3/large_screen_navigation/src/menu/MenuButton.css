@@ -1,0 +1,14 @@
+#menuButton {
+  float: left;
+  border-style: none;
+  background-color: transparent;
+}
+
+#menuButton img {
+  width: 40px;
+  height: 40px;
+}
+
+#menuButton:hover {
+  cursor: pointer;
+}
