@@ -1,0 +1,5 @@
+#feed-profile-view {
+    display: flex;
+    flex-direction: row;
+    height: 50px;
+}

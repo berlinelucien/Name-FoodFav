@@ -1,0 +1,33 @@
+#header {
+    height: 50px;
+    line-height: 50px;
+    background: #7a71ca;
+}
+
+#todo-input {
+    width: 400px;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: 0 10px;
+    padding: 6px;
+    outline: none;
+}
+
+.btn {
+    background: none;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid white;
+    outline: none;
+    cursor: pointer;
+    color: white;
+}
+
+#todo-add-btn {
+    background-color: wheat;
+    color: black    ;
+}
+
+#todo-add-btn:hover {
+    background-color: #abffa8;
+}
