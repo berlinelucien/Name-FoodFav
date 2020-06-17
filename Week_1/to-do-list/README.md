@@ -7,6 +7,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, run:
 
+### `npm install`
+
+Downloads dependencies. Running npm install is a prerequisite to calling npm start. 
+
 ### `npm start`
 
 Runs the app in the development mode. You will see a basic todo list app.<br />
