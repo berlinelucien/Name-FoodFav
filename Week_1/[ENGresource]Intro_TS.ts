@@ -84,7 +84,7 @@ function addStrings(p,q){
 console.log('----------')
 
 /**
-* Functions
+* Objects
 */
 console.log('Objects')
 
@@ -107,6 +107,10 @@ console.log("The new boss is:", newBoss.name, newBoss.phone, newBoss.address)
 console.log("The wold's best boss remains:", boss.name, boss.phone, boss.address)
 
 console.log('----------')
+
+/**
+* Interfaces
+*/
 
 interface Bosses {
     name: string;
