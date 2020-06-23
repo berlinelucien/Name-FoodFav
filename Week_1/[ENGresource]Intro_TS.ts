@@ -180,3 +180,119 @@ jim.printBusinessCard()
 jim.salesNoise()
 //Uncomment to see error
 //pam.salesNoise()
+
+
+/**
+* Functions  using fat arrow =>
+*/
+console.log('Functions using fat arrow =>')
+
+// different ways to compute 2*x using =>
+
+let sayHi = (): string => { return "Hello!!!" };
+
+console.log(sayHi())
+
+// JS syntax - var / Use the TS syntax!
+var mult2_js = function (x) {
+    return 2 * x;
+}
+
+console.log("mult2_js", mult2_js(9));
+
+// original TS syntax
+function mult2_ts(x: number): number {
+    return 2 * x;
+}
+
+console.log("mult2_ts", mult2_ts(5));
+
+// using =>, types and return
+let mult2_a = (x: number): number => {
+    return 2 * x;
+}
+
+console.log("mult2_a", mult2_a(7));
+
+// without types and without return
+let mult2_b =
+    x => 2 * x;
+
+console.log("mult2_b", mult2_b(6));
+
+// with types and no return
+let mult2_d = (x: number) => 2 * x;
+
+console.log("mult2_d", mult2_d(10));
+
+// with types and without return
+let mult2_e: (number) => number =
+    x => 2 * x;
+
+console.log("mult2_e", mult2_e(4));
+
+console.log('----------')
+
+/**
+* Generics
+*/
+console.log('Generics')
+
+// an array of strings
+let myarray:Array<string> = ["Microsoft", "TNTs"];
+
+// myarray is an array of strings uncomment to see the error
+// let myarray1:Array<string> = [1,2];
+
+// generics and functions
+
+// using the type any
+function fun(args: any): any {
+    return args;
+}
+
+// using generics
+function fun_g<T>(args:T):T {
+    return args;
+}
+
+console.log(fun_g<string>("Hello"))
+
+// generic class
+
+// class as custom array of elements of type T 
+class customArray<T> {
+    items: T[];
+
+    constructor() {
+        this.items = []
+    }
+  
+    getItems(): T[] {
+      return this.items;
+    }
+
+    addItem(item:T):void {
+        this.items.push(item);
+    }
+}
+
+// create an array of numbers, add elements to the array, and print the array
+let numarray = new customArray<number>();
+
+numarray.addItem(10);
+numarray.addItem(18);
+numarray.addItem(-5);
+
+// printing the array with a for loop
+console.log("Printing the array - with for loop")
+for (let index = 0; index < numarray.getItems().length; index++) {
+    const elt = numarray.getItems()[index];
+    console.log(elt);
+}
+
+// printing the array with map. map calls the function as parameters on each element of the array
+console.log("Printing the array - with map")
+// print the array using map
+let printelt = (x) => console.log(x);
+numarray.getItems().map((e) => printelt(e));
