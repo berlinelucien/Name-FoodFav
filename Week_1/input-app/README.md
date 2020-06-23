@@ -1,5 +1,11 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+It updates a welcome string based on input text. It is done in React with TypeScript.
+
+The final results is the following:
+
+![input-app](https://github.com/tnt-summer-academy/Samples/blob/master/Week_1/input-app/input-app-screenshot.png)
+
 ## Available Scripts 
 
 In the project directory, you can run:
