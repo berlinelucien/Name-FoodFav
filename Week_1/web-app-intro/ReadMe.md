@@ -11,6 +11,7 @@ This is a sample for the lesson [[ENG1.0] Intro to web apps.md](https://github.c
 
 **Note:**
 - An alternative to step **`3.`** above is to use `Go Live` feature of VS Code. 
+- Install Liver Server extension.
 - Simply, open the `index.html` file in VS Code and click on `Go Live` button in the bottom right corner.
 - This will start a local server and open the file for you in the browser.
 
