@@ -1,28 +1,27 @@
 import React from "react";
 import "./App.css";
+import { listenerCount } from "process";
 
 interface AppState {
   list: Array<string>;
+  //addListItem: (item: string) => void;
 }
 
-interface AppProps {
-  list: Array<string>
-  addListItem: (item: string) => void;
-}
-
-export class App extends React.Component<AppProps, AppState> {
+export class App extends React.Component<null, AppState> {
   constructor(props: any) {
     super(props);
     this.state = {
-      list: ["apples", "oranges", "pears"]
-    };
-  }
+      list: ["apples", "oranges", "pears"],
+    }
+  };
 
   render() {
+    console.log("this.state.list:")
+    console.log(this.state.list);
     return (
       <div>
         <ul>
-          {this.props.list.map((value: string, index: number) => {
+          {this.state.list.map((value: string, index: number) => {
             return <li key={index}>{value}</li>;
           })}
         </ul>
@@ -41,6 +40,9 @@ export class App extends React.Component<AppProps, AppState> {
 
   private submitForm = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    this.props.addListItem(this.inputValue);
+
+    var new_list = this.state.list.concat([this.inputValue]);
+    var new_state = { list: new_list }
+    this.setState(new_state);
   };
 }
