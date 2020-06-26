@@ -4,7 +4,7 @@ These samples are for the [TNT Curriculum](https://github.com/tnt-summer-academy
 
 # Contributing
 
-This project welcomes contributions and suggestions. Before you make a contribution, check out the [contribution guide in CONTRIBUTING.md](https://github.com/tnt-summer-academy/Samples/blob/main/CONTRIBUTING.md)for best practices.
+This project welcomes contributions and suggestions. Before you make a contribution, check out the [contribution guide in CONTRIBUTING.md](https://github.com/tnt-summer-academy/Samples/blob/main/CONTRIBUTING.md) for best practices.
 
 Most contributions require you to agree to a Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
 the rights to use your contribution.
