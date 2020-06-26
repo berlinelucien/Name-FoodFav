@@ -1,12 +1,13 @@
 # Overview
  
-These samples correspond to the [TNT Curriculum](https://github.com/tnt-summer-academy/Curriculum).
+These samples are for the [TNT Curriculum](https://github.com/tnt-summer-academy/Curriculum). Some are used in projects and others are for reference.
 
 # Contributing
 
-This project welcomes contributions and suggestions.  Most contributions require you to agree to a
-Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
-the rights to use your contribution. For details, visit https://cla.opensource.microsoft.com.
+This project welcomes contributions and suggestions. Before you make a contribution, check out the [contribution guide in CONTRIBUTING.md](https://github.com/tnt-summer-academy/Samples/blob/main/CONTRIBUTING.md)for best practices.
+
+Most contributions require you to agree to a Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
+the rights to use your contribution.
 
 When you submit a pull request, a CLA bot will automatically determine whether you need to provide
 a CLA and decorate the PR appropriately (e.g., status check, comment). Simply follow the instructions
