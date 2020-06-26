@@ -7,7 +7,8 @@ Thank you for helping make the TNT curriculum better. Please refer to this guide
 Submit pull requests for spelling, grammar, clarity, and additional resources in existing lessons or additional reference guides.
 
 1. Please create a branch for your change.
-2. A TNT Curriculum maintainer will sign-off on the change before merging.
+2. In the pull request, describe the changes you've made.
+3. A TNT Curriculum maintainer will sign-off on the change before merging.
 
 ## Opening an issue
 
