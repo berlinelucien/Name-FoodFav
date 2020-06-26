@@ -1,6 +1,6 @@
 # Overview
  
-This is the samples library corresponding to the [TNT Curriculum](https://github.com/microsoft/TNT_Curriculum).
+These samples correspond to the [TNT Curriculum](https://github.com/tnt-summer-academy/Curriculum).
 
 # Contributing
 
