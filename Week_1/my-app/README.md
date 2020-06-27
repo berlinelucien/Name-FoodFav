@@ -1,5 +1,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+This is the project that is generated when you use `create-react-app my-app --template typescript`
+
 ## Available Scripts
 
 In the project directory, you can run:
