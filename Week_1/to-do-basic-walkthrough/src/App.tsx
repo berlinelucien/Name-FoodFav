@@ -12,7 +12,7 @@ class App extends React.Component<{}, AppState> {
   constructor(props: any) {
     super(props);
     this.state = {
-      //      list: ["Do X", "Do Y", "Do Z"]
+      list: ["Do X", "Do Y", "Do Z"]
     };
   }
 
