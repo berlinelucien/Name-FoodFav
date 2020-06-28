@@ -1,5 +1,13 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Goal of the project
+
+This project showcases how to use React with Redux to create a store to update a counter.
+
+The final result is:
+
+![redux counter](https://github.com/tnt-summer-academy/Curriculum/blob/main/Week%202/%5BENG2.4%5Dcounter-example-screenshot.png)
+
 ## Available Scripts
 
 In the project directory, you can run:
