@@ -10,6 +10,10 @@ The final results is the following:
 
 In the project directory, you can run:
 
+### `npm install`
+
+`npm install` installs dependencies into the `node_modules` directory, for the node project. You call it to install the dependencies for your project.
+
 ### `yarn start`
 
 Runs the app in the development mode.<br />
