@@ -41,7 +41,7 @@ console.log("functions");
 function addf(a: number, b: number): number {
     return a + b;
 }
-console.log(add(2, 3));
+console.log(addf(2, 3));
 
 // Anonymous function
 let addedf = function (x: number, y: number) { return x + y };
