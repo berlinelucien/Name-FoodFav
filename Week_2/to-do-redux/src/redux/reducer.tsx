@@ -13,6 +13,8 @@ import { ToDoAppState /*CounterActionsTypes*/ } from './types';
 
 const intialState: ToDoAppState = { items: ["A", "B", "C"] }
 
+var itemID = 1; // increase by 1 every time we add a new todo item
+
 function todoReducer(state: ToDoAppState | undefined, action: any): ToDoAppState {
     if (state === undefined) {
         return intialState;

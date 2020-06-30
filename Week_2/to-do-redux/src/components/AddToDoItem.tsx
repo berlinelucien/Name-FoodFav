@@ -1,7 +1,7 @@
 import React from 'react';
 import '../App.css';
-import { addItem } from '../actions';
-import { ToDoAppState } from '../types';
+import { addItem } from '../redux/actions';
+import { ToDoAppState } from '../redux/types';
 import { connect } from 'react-redux';
 
 // ToDoList component

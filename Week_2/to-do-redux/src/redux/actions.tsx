@@ -3,7 +3,7 @@
 export const ADD = "ADD_ITEM";
 export const COMPLETE = "COMPLETE_ITEM";
 
-export function addItem(desc: string) {
+export function addItem(desc: string = "") {
     return {
         type: ADD,
         description: desc

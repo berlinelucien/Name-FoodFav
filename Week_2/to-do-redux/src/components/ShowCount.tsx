@@ -1,5 +1,5 @@
 import React from 'react';
-import { ToDoAppState } from '../types';
+import { ToDoAppState } from '../redux/types';
 import { connect } from 'react-redux';
 
 class ShowCount extends React.Component<any> {

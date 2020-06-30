@@ -1,6 +1,6 @@
 import React from 'react';
 //import { increaseAction, decreaseAction } from './actions';
-import { ToDoAppState } from '../types';
+import { ToDoAppState } from '../redux/types';
 import { connect } from 'react-redux';
 
 // ToDoList component
