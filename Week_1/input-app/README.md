@@ -8,15 +8,13 @@ The final results is the following:
 
 ## Available Scripts 
 
-In the project directory, you can run:
+In the project directory, you have to run:
 
 ### `npm install`
 
 `npm install` installs dependencies into the `node_modules` directory, for the node project. You call it to install the dependencies for your project.
 
-### `npm install`
-
-`npm install` installs dependencies into the `node_modules` directory, for the node project. You call it to install the dependencies for your project.
+Possible commands:
 
 ### `yarn start`
 
