@@ -12,7 +12,7 @@ In the project directory, you have to run:
 
 ### `npm install`
 
-`npm install` installs dependencies into the `node_modules` directory, for the node project. You call it to install the dependencies for your project.
+`npm install` installs dependencies into the `node_modules` directory. You call it to install the dependencies for your project.
 
 Possible commands:
 
