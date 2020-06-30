@@ -1,6 +1,6 @@
 import React from 'react';
 //import { increaseAction, decreaseAction } from './actions';
-import { ToDoAppState } from '../redux/types';
+import { ToDoAppState, ToDoItem } from '../redux/types';
 import { connect } from 'react-redux';
 
 // ToDoList component
@@ -13,8 +13,8 @@ class ToDoList extends React.Component<any> {
         return (
             <div className="root" >
                 <ul>
-                    {this.props.listOfToDoItems.map((item: string) => (
-                        <li key={item}>{item}</li>
+                    {this.props.listOfToDoItems.map((item: ToDoItem) => (
+                        <li key={item.id}>{item.description}</li>
                     ))}
                 </ul>
             </div>

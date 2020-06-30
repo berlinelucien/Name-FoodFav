@@ -1,5 +1,5 @@
 import { ADD, COMPLETE } from './actions';
-import { ToDoAppState /*CounterActionsTypes*/ } from './types';
+import { ToDoItem, ToDoAppState /*CounterActionsTypes*/ } from './types';
 
 // Reducer
 // The reducer is a function that takes the previous 
@@ -11,22 +11,30 @@ import { ToDoAppState /*CounterActionsTypes*/ } from './types';
 // State of the app
 // It is defined by count
 
-const intialState: ToDoAppState = { items: ["A", "B", "C"] }
+const firstItem = new ToDoItem(1, "A");
+const secondItem = new ToDoItem(2, "B");
 
-var itemID = 1; // increase by 1 every time we add a new todo item
+const intialState: ToDoAppState = {
+    idCounter: 3, // this is the id assigned to the next object that we create
+    items: [firstItem, secondItem]
+}
 
 function todoReducer(state: ToDoAppState | undefined, action: any): ToDoAppState {
     if (state === undefined) {
         return intialState;
     }
 
+    let nextId = state.idCounter;
     let listOfItems = state.items;
     switch (action.type) {
         case ADD: {
-            return { items: listOfItems.concat(action.description) };
+            return {
+                items: listOfItems.concat(new ToDoItem(nextId, action.description)),
+                idCounter: nextId + 1
+            };
         }
-        case COMPLETE:
-            return { items: listOfItems }; // Not done yet :)
+        // case COMPLETE:
+        //     return { items: listOfItems }; // Not done yet :)
         default:
             return state;
     }
