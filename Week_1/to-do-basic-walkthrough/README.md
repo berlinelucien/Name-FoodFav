@@ -4,7 +4,7 @@ Todo list done by Christelle. Simplest as possible.
 
 Screenshot:
 
-![todo list chris screenshot](https://github.com/scharffc/TNT-code-chris/blob/master/Week_1/todolistchris/todolistscreenshot.png)
+![todo list screenshot](./todolistscreenshot.png)
 
 ## Available Scripts
 
