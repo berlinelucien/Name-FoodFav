@@ -1,0 +1,68 @@
+/* Desktop Styling*/
+.App{
+    font-family: 'Lucida Sans', Geneva, Verdana, sans-serif;
+    display:grid;
+    grid-template-areas: 
+    "B S"
+    "B N";
+    grid-template-columns: 40% 1fr;
+    gap: 5%;
+    justify-items:center;
+}
+.App img{
+    max-width: 100%;
+    display: block;
+}
+.Brand{
+    font-size:140%;
+    grid-area:B;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+.Signup{
+    grid-area:S;
+    width:100%;
+    font-size:4.5vw;
+}
+.Nav{
+    grid-area:N;
+    font-variant: small-caps;
+    font-size:1.5em;
+}
+form{
+    width:100%;
+}
+input{
+    display:block;
+    width:90%;
+}
+
+ /* Overrides for Mobile Styling */
+@media(max-width:425px)
+{
+    .App{
+        grid-template-areas: 
+        "B"
+        "S"
+        "N";
+        grid-template-columns: auto;
+    }
+    .Brand{
+        flex-direction:row-reverse;
+        justify-content: flex-end;
+    }
+    .App img{
+        width:20%;
+        padding:3%;
+    }
+    .Signup{
+        font-size:6vw;
+    }
+}
+
+@media(min-width:650px){
+    .Signup{
+        font-size:3vw;
+    }
+}
