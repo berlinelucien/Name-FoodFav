@@ -4,6 +4,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 This project showcases how to use React with Redux to create a store to update a counter.
 
+Complete the todos.
+
 The final result is:
 
 ![redux counter](https://github.com/tnt-summer-academy/Curriculum/blob/main/Week%202/%5BENG2.4%5Dcounter-example-screenshot.png)
