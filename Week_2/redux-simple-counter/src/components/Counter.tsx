@@ -61,7 +61,6 @@ function mapDispatchToProps(dispatch: any) {
 
 }
 
-// TODO: Complete the connect call
 // The Hight Order Component (HOC)
 // props need to be received by the component
 let ConnectedComponent = connect(

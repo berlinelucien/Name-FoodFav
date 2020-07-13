@@ -13,7 +13,7 @@ import * as serviceWorker from './serviceWorker';
 // An app has only one store
 // The reducer (function) is the argument of createStore
 // counterReducer comes from reducer.tsx
-let store = createStore(counterReducer);
+const myStore = createStore(counterReducer);
 
 // Store is a prop of the Provider component
 // Provider is the outermost component of the app to help
@@ -22,7 +22,7 @@ let store = createStore(counterReducer);
 // The <Provider /> makes the Redux store available to any nested 
 // components that have been wrapped in the connect() function
 ReactDOM.render(
-  <Provider store={store}>
+  <Provider store={myStore}>
     <App/>
   </Provider>,
   document.querySelector('#root')
