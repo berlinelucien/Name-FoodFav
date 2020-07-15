@@ -1,7 +1,7 @@
 import React from 'react';
 import '../App.css';
-import { addItem } from '../actions';
-import { ToDoAppState } from '../types';
+import { addItem } from '../redux/actions';
+import { ToDoAppState } from '../redux/types';
 import { connect } from 'react-redux';
 
 // ToDoList component
@@ -58,7 +58,8 @@ function mapStateToProps(state: ToDoAppState) {
 function mapDispatchToProps(dispatch: any) {
     return {
         addNewItem: function (desc: string) {
-            let action = addItem(desc)
+            let action = addItem(desc);
+            //let action = { type: actionIdentifier.Add, description: desc }
             return dispatch(action);
         },
     }
