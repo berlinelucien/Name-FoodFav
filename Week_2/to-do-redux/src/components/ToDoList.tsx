@@ -1,5 +1,5 @@
 import React from 'react';
-//import { increaseAction, decreaseAction } from './actions';
+import { toggleItem } from '../redux/actions';
 import { ToDoAppState, ToDoItem } from '../redux/types';
 import { connect } from 'react-redux';
 
@@ -13,9 +13,15 @@ class ToDoList extends React.Component<any> {
         return (
             <div className="root" >
                 <ul>
-                    {this.props.listOfToDoItems.map((item: ToDoItem) => (
-                        <li key={item.id}>{item.description}</li>
-                    ))}
+                    {this.props.listOfToDoItems.map((item: ToDoItem) => {
+                        let struckThru: string;
+                        if (item.completed === false)
+                            struckThru = "";
+                        else
+                            struckThru = "strikethrough"
+
+                        return <li key={item.id}><input type="checkbox" id={item.id.toString()} onClick={() => this.props.toggleItem(item.id)} /><span className={struckThru}>{item.description}</span></li>
+                    })}
                 </ul>
             </div>
         )
@@ -27,7 +33,7 @@ class ToDoList extends React.Component<any> {
 // This file permits to match the redux-specific hooks to be able to use them in React
 
 // Map redux state to component state
-// This function subscribes to all store updates and gets called when 
+// This function subscribes to all store updates and gets called when
 // anything in the store changes. It return an object containing the store data you
 // want to transmit as props to a component
 // Here an object containing countValue is transmitted
@@ -42,7 +48,8 @@ function mapStateToProps(state: ToDoAppState) {
 // increase... fires a dispatch with increase... as a type
 function mapDispatchToProps(dispatch: any) {
     return {
-        // no actions
+        toggleItem: (id: string) => dispatch(toggleItem(parseInt(id)))
+
     }
 }
 

@@ -58,7 +58,8 @@ function mapStateToProps(state: ToDoAppState) {
 function mapDispatchToProps(dispatch: any) {
     return {
         addNewItem: function (desc: string) {
-            let action = addItem(desc)
+            let action = addItem(desc);
+            //let action = { type: actionIdentifier.Add, description: desc }
             return dispatch(action);
         },
     }

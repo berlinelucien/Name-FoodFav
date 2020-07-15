@@ -1,18 +1,35 @@
 // Actions and their types
 
-export const ADD = "ADD_ITEM";
-export const COMPLETE = "COMPLETE_ITEM";
+export enum actionIdentifier {
+    Add,
+    Toggle
+}
 
-export function addItem(desc: string = "") {
+interface Action {
+    type: actionIdentifier;
+}
+
+export interface AddAction extends Action {
+    description: string;
+}
+
+export function addItem(desc: string): AddAction {
     return {
-        type: ADD,
+        type: actionIdentifier.Add,
         description: desc
     };
 };
 
-export function completeItem(desc: string) {
+
+export interface ToggleAction extends Action {
+    id: number;
+}
+
+export function toggleItem(idToComplete: number): ToggleAction {
     return {
-        type: COMPLETE,
-        whichOne: desc
-    };
+        type: actionIdentifier.Toggle,
+        id: idToComplete
+    }
 };
+
+export type TodoActions = AddAction | ToggleAction

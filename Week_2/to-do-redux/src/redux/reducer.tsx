@@ -1,5 +1,5 @@
-import { ADD, COMPLETE } from './actions';
-import { ToDoItem, ToDoAppState /*CounterActionsTypes*/ } from './types';
+import { actionIdentifier, TodoActions, AddAction, ToggleAction } from './actions'
+import { ToDoItem, ToDoAppState } from './types';
 
 // Reducer
 // The reducer is a function that takes the previous 
@@ -11,15 +11,15 @@ import { ToDoItem, ToDoAppState /*CounterActionsTypes*/ } from './types';
 // State of the app
 // It is defined by count
 
-const firstItem = new ToDoItem(1, "A");
-const secondItem = new ToDoItem(2, "B");
+const firstItem = new ToDoItem(1, "Get food for dinner");
+const secondItem = new ToDoItem(2, "Finish up homework for class");
 
 const intialState: ToDoAppState = {
     idCounter: 3, // this is the id assigned to the next object that we create
     items: [firstItem, secondItem]
 }
 
-function todoReducer(state: ToDoAppState | undefined, action: any): ToDoAppState {
+function todoReducer(state: ToDoAppState | undefined, action: TodoActions): ToDoAppState {
     if (state === undefined) {
         return intialState;
     }
@@ -27,14 +27,27 @@ function todoReducer(state: ToDoAppState | undefined, action: any): ToDoAppState
     let nextId = state.idCounter;
     let listOfItems = state.items;
     switch (action.type) {
-        case ADD: {
+        case actionIdentifier.Add: {
+            let addAction = action as AddAction;
             return {
-                items: listOfItems.concat(new ToDoItem(nextId, action.description)),
+                items: listOfItems.concat(new ToDoItem(nextId, addAction.description)),
                 idCounter: nextId + 1
             };
         }
-        // case COMPLETE:
-        //     return { items: listOfItems }; // Not done yet :)
+        case actionIdentifier.Toggle:
+            let toggleAction = action as ToggleAction;
+            let id = toggleAction.id;
+            listOfItems = listOfItems.slice(0);
+            let itemIdx = listOfItems.findIndex(item => item.id === id);
+            if (itemIdx !== -1) {
+                listOfItems[itemIdx].completed = !listOfItems[itemIdx].completed;
+            }
+            let newState = {
+                items: listOfItems,
+                idCounter: state.idCounter
+            };
+            return newState;
+
         default:
             return state;
     }
