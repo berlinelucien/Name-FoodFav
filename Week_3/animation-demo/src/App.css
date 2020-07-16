@@ -6,18 +6,18 @@
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation-name: App-logo-spin;
-    animation-duration: 5s;
-    animation-iteration-count: 2;
-    animation-direction: alternate;
+    animation-duration: 3s;
     animation-timing-function: ease-in-out;
   }
 }
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
+    opacity:.3;
   }
   to {
     transform: rotate(1440deg);
+    opacity:1;
   }
 }
 

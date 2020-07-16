@@ -29,13 +29,12 @@ const App = () => {
       <header className="App-header">
         <FlyImage />
       </header>
-      <animated.div style={leftAnimation}>Learn </animated.div> 
-      <animated.div style={rightAnimation}>Animation </animated.div>
-      <animated.a style={multiAnimation}
-                  className="App-link"
-                  href="https://www.react-spring.io/"
-                  target="_blank"
-                  rel="noopener noreferrer">(Demos)</animated.a>
+      <animated.span style={leftAnimation}>React-Spring </animated.span> 
+      <animated.span style={rightAnimation}>Animation </animated.span>
+      <animated.a style={multiAnimation} className="App-link"
+                  href="https://www.react-spring.io/" >(Demos)</animated.a>
+      <a className="animate__animated animate__swing"
+                  href="https://animate.style/">CSS Animation</a>
     </div>
     );
   }
