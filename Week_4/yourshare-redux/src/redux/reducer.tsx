@@ -1,4 +1,4 @@
-import { YourShareActions, actionIdentifier, AddAction } from './actions'
+import { YourShareActions, actionIdentifier, JoinAction } from './actions'
 import { IYourShareState, Person } from './types';
 
 // NOTE NOTE NOTE:
@@ -19,7 +19,7 @@ let SampleData_LoadedProgrammatically = (): IYourShareState => {
     person2.addItem(5, "Car", "Garden", "A pretty great car.  The steering wheel...");
 
     return {
-        idCounter: 6, // this is the id assigned to the next object that we create
+        idCounter: 5, // the next object that we create will be given 5+1 = 6 as it's ID number
         currentUser: you,
         people: [
             person1,
@@ -40,8 +40,8 @@ function yourShareReducer(state: IYourShareState | undefined, action: YourShareA
     const nextId = state.idCounter + 1;
 
     switch (action.type) {
-        case actionIdentifier.Add: {
-            let addAction = action as AddAction;
+        case actionIdentifier.Join: {
+            let addAction = action as JoinAction;
 
             // TODO: Uncomment this to see a visual confirmation that things are going ok, at least up to this point :)
             // alert('Added name: ' + addAction.name + ' phone: ' + addAction.phone + ' zip: ' + addAction.zip);
@@ -56,7 +56,7 @@ function yourShareReducer(state: IYourShareState | undefined, action: YourShareA
             // }
 
             newState.currentUser = new Person(nextId, addAction.name, addAction.phone, addAction.zip);
-            newState.people.push(newState.currentUser); // add the current user to the listgi
+            newState.people.push(newState.currentUser); // add the current user to the list of all people
             newState.idCounter = nextId;
 
             return newState;

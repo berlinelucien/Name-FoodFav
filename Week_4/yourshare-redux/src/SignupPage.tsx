@@ -1,7 +1,7 @@
 import React from "react";
 import { pages } from "./App";
 
-import { joinInfo } from "./redux/actions"
+import { createJoinAction } from "./redux/actions"
 import { IYourShareState } from './redux/types';
 import { connect } from 'react-redux';
 
@@ -78,7 +78,7 @@ function mapStateToProps(state: IYourShareState) {
 // Map redux actions to component props
 function mapDispatchToProps(dispatch: any) {
   return {
-    saveJoinInfo: (n: string, p: string, z: string) => dispatch(joinInfo(n, p, z))
+    saveJoinInfo: (n: string, p: string, z: string) => dispatch(createJoinAction(n, p, z))
   }
 }
 
