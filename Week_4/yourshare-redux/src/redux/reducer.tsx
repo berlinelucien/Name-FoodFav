@@ -23,7 +23,8 @@ let SampleData_LoadedProgrammatically = (): IYourShareState => {
         currentUser: you,
         people: [
             person1,
-            person2
+            person2,
+            you
         ]
     }
 }
