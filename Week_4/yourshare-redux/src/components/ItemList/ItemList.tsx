@@ -22,7 +22,7 @@ class ItemList extends React.Component<IItemListProps> {
                     <tbody>
                         {this.props.listOfPeople.map((person: Person) => {
                             return person.items.map((item: Item) => (
-                                <tr key={person.id} > <td>{item.name}</td><td>{person.name}</td></tr>)
+                                <tr key={item.id} > <td>{item.name}</td><td>{person.name}</td></tr>)
                             )
                         }
                         )}
