@@ -56,6 +56,7 @@ function yourShareReducer(state: IYourShareState | undefined, action: YourShareA
             // }
 
             newState.currentUser = new Person(nextId, addAction.name, addAction.phone, addAction.zip);
+            newState.people.push(newState.currentUser); // add the current user to the list
             newState.idCounter = nextId;
 
             return newState;
