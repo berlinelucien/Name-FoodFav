@@ -1,0 +1,66 @@
+{
+    "idCounter": 6,
+    "currentUser": {
+        "id": 0,
+        "name": "This is you",
+        "phone": "508-867-5309",
+        "zipCode": "98052",
+        "preferences": {
+            "text_me_borrow_requests": false,
+            "bffs_borrow_without_ok": false,
+            "fof_dont_see_items": false
+        },
+        "bestFriends": [],
+        "items": []
+    },
+    "people": [{
+            "id": 1,
+            "name": "Stacey",
+            "phone": "425-123-4567",
+            "zipCode": "98011",
+            "preferences": {
+                "text_me_borrow_requests": false,
+                "bffs_borrow_without_ok": false,
+                "fof_dont_see_items": false
+            },
+            "bestFriends": [],
+            "items": [{
+                "id": 2,
+                "name": "Blender",
+                "itemType": "Kitchen",
+                "description": "A pretty great blender.  The lid...",
+                "ownedBy": 1,
+                "lentTo": null
+            }]
+        },
+        {
+            "id": 3,
+            "name": "Marcos",
+            "phone": "206-7654-321",
+            "zipCode": "98115",
+            "preferences": {
+                "text_me_borrow_requests": false,
+                "bffs_borrow_without_ok": false,
+                "fof_dont_see_items": false
+            },
+            "bestFriends": [],
+            "items": [{
+                    "id": 4,
+                    "name": "Rake",
+                    "itemType": "Garden",
+                    "description": "A pretty great rake.  The handle...",
+                    "ownedBy": 3,
+                    "lentTo": null
+                },
+                {
+                    "id": 5,
+                    "name": "Car",
+                    "itemType": "Garden",
+                    "description": "A pretty great car.  The steering wheel...",
+                    "ownedBy": 3,
+                    "lentTo": null
+                }
+            ]
+        }
+    ]
+}
