@@ -9,7 +9,7 @@ export enum actionIdentifier {
 }
 
 export interface AddAction {
-    type: actionIdentifier;
+    type: actionIdentifier;  // TODO WARNING: Any new actions MUST have a type: actionIdentifier too!!!!!!!!!!!
     name: string;
     phone: string;
     zip: string;

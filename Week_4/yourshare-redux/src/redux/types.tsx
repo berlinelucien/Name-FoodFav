@@ -30,10 +30,9 @@ export class Person {
     this.bestFriends = new Array<Person>();
     this.items = new Array<Item>();
   }
-  addItem(the_id: number, the_name: string, the_itemType: string, desc: string): Item {
+  addItem(the_id: number, the_name: string, the_itemType: string, desc: string) {
     const newItem = new Item(the_id, the_name, the_itemType, desc, this);
     this.items.push(newItem);
-    return newItem;
   }
 }
 
