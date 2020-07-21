@@ -36,7 +36,7 @@ export class Person {
   }
 }
 
-export class Item implements Item {
+export class Item {
   id: number;
   name: string;
   itemType: string;
