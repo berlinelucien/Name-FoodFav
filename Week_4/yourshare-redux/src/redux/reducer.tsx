@@ -46,6 +46,13 @@ function yourShareReducer(state: IYourShareState | undefined, action: YourShareA
             // alert('Added name: ' + addAction.name + ' phone: ' + addAction.phone + ' zip: ' + addAction.zip);
 
             let newState: IYourShareState = { ...state }; // this will copy the current state
+            // the ... operator is the "spread operator"
+            // if we couldn't use then we'd need to copy each field individually, like this:
+            // let newState: IYourShareState = {
+            //     idCounter: state.idCounter,
+            //     people: state.people,
+            //     currentUser: state.currentUser
+            // }
 
             newState.currentUser = new Person(nextId, addAction.name, addAction.phone, addAction.zip);
             newState.idCounter = nextId;
