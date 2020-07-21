@@ -1,11 +1,6 @@
 
-export interface IPreferences {
-  text_me_borrow_requests: boolean,
-  bffs_borrow_without_ok: boolean,
-  fof_dont_see_items: boolean
-}
 
-export class Prefs implements IPreferences {
+export class Prefs {
   text_me_borrow_requests: boolean;
   bffs_borrow_without_ok: boolean;
   fof_dont_see_items: boolean;
@@ -17,21 +12,14 @@ export class Prefs implements IPreferences {
   }
 }
 
-export interface IPerson {
-  id: number,
-  name: string,
-  preferences: IPreferences,
-  bestFriends: Array<IPerson>,
-  items: Array<IItem>
-}
-export class Person implements IPerson {
+export class Person {
   id: number;
   name: string;
   phone: string;
   zipCode: string;
-  preferences: IPreferences;
-  bestFriends: Array<IPerson>;
-  items: Array<IItem>;
+  preferences: Prefs;
+  bestFriends: Array<Person>;
+  items: Array<Item>;
 
   constructor(personId: number, theName: string, ph: string, zip: string) {
     this.id = personId;
@@ -39,33 +27,25 @@ export class Person implements IPerson {
     this.phone = ph;
     this.zipCode = zip;
     this.preferences = new Prefs(false, false, false);
-    this.bestFriends = new Array<IPerson>();
-    this.items = new Array<IItem>();
+    this.bestFriends = new Array<Person>();
+    this.items = new Array<Item>();
   }
-  addItem(the_id: number, the_name: string, the_itemType: string, desc: string): IItem {
+  addItem(the_id: number, the_name: string, the_itemType: string, desc: string): Item {
     const newItem = new Item(the_id, the_name, the_itemType, desc, this);
     this.items.push(newItem);
     return newItem;
   }
 }
 
-export interface IItem {
-  id: number,
-  name: string,
-  itemType: string,
-  description: string,
-  ownedBy: IPerson,
-  lentTo: IPerson | null // undefined means that it's not lent to anybody right now
-}
-export class Item implements IItem {
+export class Item implements Item {
   id: number;
   name: string;
   itemType: string;
   description: string;
-  ownedBy: IPerson;
+  ownedBy: Person;
   lentTo = null;
 
-  constructor(itemId: number, the_name: string, the_itemType: string, desc: string, owner: IPerson) {
+  constructor(itemId: number, the_name: string, the_itemType: string, desc: string, owner: Person) {
     this.id = itemId;
     this.name = the_name;
     this.itemType = the_itemType;
@@ -79,8 +59,8 @@ export interface IYourShareState {
   // Person and Item objects
   // May we need this, maybe we don't, but it's often useful for looking things up / saving to a file, etc
   idCounter: number,
-  people: Array<IPerson>,
-  currentUser: IPerson
+  people: Array<Person>,
+  currentUser: Person
 }
 
 export default IYourShareState;

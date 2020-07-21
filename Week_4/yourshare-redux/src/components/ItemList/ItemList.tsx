@@ -1,13 +1,13 @@
 import React from 'react';
 import "./ItemList.css";
-import { IYourShareState, IPerson, IItem } from '../../redux/types';
+import { IYourShareState, Person, Item } from '../../redux/types';
 import { connect } from 'react-redux';
 
 // ItemList component
 // Render the list of items that can be borrowed (for use on the welcome screen)
 
 interface IItemListProps {
-    listOfPeople: Array<IPerson>
+    listOfPeople: Array<Person>
 }
 
 class ItemList extends React.Component<IItemListProps> {
@@ -20,8 +20,8 @@ class ItemList extends React.Component<IItemListProps> {
                         <th>Lender</th>
                     </thead>
                     <tbody>
-                        {this.props.listOfPeople.map((person: IPerson) => {
-                            return person.items.map((item: IItem) => (
+                        {this.props.listOfPeople.map((person: Person) => {
+                            return person.items.map((item: Item) => (
                                 <tr key={person.id} > <td>{item.name}</td><td>{person.name}</td></tr>)
                             )
                         }

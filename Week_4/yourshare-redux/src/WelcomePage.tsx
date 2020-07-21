@@ -2,12 +2,12 @@ import React from "react";
 import { pages } from "./App";
 import ItemList from "./components/ItemList/ItemList"
 
-import { IYourShareState, IPerson } from './redux/types';
+import { IYourShareState, Person } from './redux/types';
 import { connect } from 'react-redux';
 
 interface WelcomeScreenProps {
   changePage: (page: pages) => void;
-  you: IPerson;
+  you: Person;
 }
 
 class WelcomePage extends React.Component<WelcomeScreenProps> {
