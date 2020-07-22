@@ -7,7 +7,7 @@ import { connect } from 'react-redux';
 
 interface SignupScreenProps {
   changePage: (page: pages) => void;
-  saveJoinInfo: (n: string, t: string, d: string) => void;
+  saveJoinInfo: (n: string, p: string, z: string) => void;
 }
 
 class SignupPage extends React.Component<SignupScreenProps> {
