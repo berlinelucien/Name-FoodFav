@@ -1,0 +1,17 @@
+.buttons {
+    background-color: transparent;
+    border: thin solid black;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 3px;
+    transition: all .15s ease-in;
+    margin: 5px;
+}
+
+.buttons:hover:nth-child(1) {
+    background-color: #F45B69;
+}
+
+.buttons:hover:nth-child(3) {
+    background-color: #C0DFA1;
+}
