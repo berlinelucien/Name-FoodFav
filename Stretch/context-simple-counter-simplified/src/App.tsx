@@ -3,6 +3,14 @@ import './App.css';
 import CounterDisplay from './components/CounterDisplay';
 import CounterChanger from './components/CounterChanger';
 
+///////////////////////////////////////////////////////////////////////////////
+//  NOTE: 
+//  
+//  There's another branch ("SplitStateAndContext") that has a similar varsion,
+//  except that it splits up the app's state and the context
+//
+///////////////////////////////////////////////////////////////////////////////
+
 
 // Updating the context from a subcomponent:
 // https://reactjs.org/docs/context.html#updating-context-from-a-nested-component
