@@ -2,7 +2,13 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+import { MyFirebase } from './myFirebase';
+
 function App() {
+
+  let db = new MyFirebase();
+  db.createUser1();
+
   return (
     <div className="App">
       <header className="App-header">
@@ -24,33 +30,3 @@ function App() {
 }
 
 export default App;
-
-/*<!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
-
-<!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-
-<script>
-  // Your web app's Firebase configuration
-  var firebaseConfig = {
-    apiKey: "AIzaSyCzUTWQpoVu956eV_6AQtI5ENtwyxjtHeQ",
-    authDomain: "tnt-2020-firebase-demo.firebaseapp.com",
-    databaseURL: "https://tnt-2020-firebase-demo.firebaseio.com",
-    projectId: "tnt-2020-firebase-demo",
-    storageBucket: "tnt-2020-firebase-demo.appspot.com",
-    messagingSenderId: "351067380140",
-    appId: "1:351067380140:web:7fcb50dc0a72bf8fda4209"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-</script>*/
-
-// Tutorial:
-// https://appdividend.com/2017/07/22/react-firebase-tutorial/
-
-// The official docs:
-// https://firebase.google.com/docs/web/setup?authuser=0#node.js-apps
-//
-// Read from / write to DB:
-// https://firebase.google.com/docs/database/web/read-and-write?authuser=0
