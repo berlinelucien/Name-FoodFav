@@ -45,3 +45,12 @@ export default App;
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
 </script>*/
+
+// Tutorial:
+// https://appdividend.com/2017/07/22/react-firebase-tutorial/
+
+// The official docs:
+// https://firebase.google.com/docs/web/setup?authuser=0#node.js-apps
+//
+// Read from / write to DB:
+// https://firebase.google.com/docs/database/web/read-and-write?authuser=0
