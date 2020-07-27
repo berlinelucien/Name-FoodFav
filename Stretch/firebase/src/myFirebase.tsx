@@ -13,83 +13,95 @@ const firebaseConfig = {
 
 
 export class MyFirebase {
-
-    //private firebaseApp: firebase.app.App;
-    // private firebaseDB: firebase.database.Database;
-
     constructor() {
-        //this.firebaseApp =  
-        if (!firebaseApp.apps.length) {
+        if (firebase.apps.length === 0) {
             firebaseApp.initializeApp(firebaseConfig);
         }
     }
     // CRUD:
 
-    // // CREATE:
-    // // basic write
-    // // https://firebase.google.com/docs/database/web/read-and-write?authuser=0
-    createUser1() {
+    // CREATE:
+    // basic write
+    // https://firebase.google.com/docs/database/web/read-and-write?authuser=0
+    createUser1(name: string, eml: string, profilePicURL: string) {
 
-        firebase.database().ref('users/1').set({
-            username: "UserName_1",
-            email: "Email_1@email.com",
-            profile_picture: "imageUrl_1"
-        });
+        let newUserRef = firebase.database().ref('users/1');
+        newUserRef.set({
+            username: name,
+            email: eml,
+            profile_picture: profilePicURL
+        }).then(
+            () => { console.log("Added the new user successfully!"); },
+            (reason: any) => (console.log("ERROR: Did NOT add the user.  Reason: " + reason))
+        );
     }
 
+    // TODO: Use push to add a child element
+    // https://firebase.google.com/docs/reference/node/firebase.database.Reference#push
+    // with a previous id of '1', this generated the key of 'MD6yX0XNX7riPu2-_90' :)
+    createANOTHERUser(name: string, eml: string, profilePicURL: string) {
+        let newUserRef = firebase.database().ref('users');
+        newUserRef.push().set(
+            {
+                username: name,
+                email: eml,
+                profile_picture: profilePicURL
+            }
+        ).then(
+            () => { console.log("Added the BRAND NEW new user successfully!"); },
+            (reason: any) => (console.log("ERROR: Did NOT add the brand new user.  Reason: " + reason))
+        );
+    }
 
+    // READ:
+    // basic read
+    // https://firebase.google.com/docs/database/web/read-and-write?authuser=0#read_data_once
+    getAnObject(location: string, callWhenFinished: (data: any) => void): void {
+        let ref = firebase.database().ref(location);
+        ref.once('value').then(
+            (snapshot) => {
+                var objectToGet = snapshot.val() || null; // if we don't find anything then return an empty object
+                console.log("read this value in the original handler: " + objectToGet);
+                callWhenFinished(objectToGet);
+            })
+            .catch((error) => {
+                console.log("Couldn't get the object: " + error);
+                callWhenFinished(null)
+            });
+    }
 
-    // // READ:
-    // // basic read
-    // // https://firebase.google.com/docs/database/web/read-and-write?authuser=0#read_data_once
-    // firebase.database().ref('/users/1').once('value').then(function (snapshot) {
-    //     var username = (snapshot.val() && snapshot.val().username) || 'Anonymous';
-    //     console.log("read this value in the original handler: " + username);
-    //     return username;
-    // });
+    // READ:
+    // read a list of objects
+    // https://firebase.google.com/docs/database/web/read-and-write?authuser=0#read_data_once
+    getListOfObjects(location: string, callWhenFinished: (data: any) => void): void {
+        let ref = firebase.database().ref(location);
+        ref.once('value').then(
+            (snapshot) => {
+                var listOfUsers = snapshot.val() || []; // Either we got the users, or else we have an empty list
+                callWhenFinished(Object.values(listOfUsers));
+            })
+            .catch((error) => {
+                console.log("Couldn't get list of objects: " + error);
+                callWhenFinished([])
+            });
+    }
 
-    // // UPDATE:
-    // // this will only change the things that we give it, instead of replacing the object & all children
-    // // https://firebase.google.com/docs/database/web/read-and-write?authuser=0#update_specific_fields
-    // // Get a key for a new Post.
+    // UPDATE:
+    // this will only change the things that we give it, instead of replacing the object & all children
+    // https://firebase.google.com/docs/database/web/read-and-write?authuser=0#update_specific_fields
+    // Get a key for a new Post.
+    updateObject(location: string, updates: {}, callWhenFinished: (err: Error | null) => void): void {
+        let ref = firebase.database().ref(location);
+        ref.update(updates, callWhenFinished); // This will call the 'callWhenFinished' function for us
+    }
 
-    // // Write the new post's data simultaneously in the posts list and the user's post list.
-    // var updates: any = {};
-    // updates['username'] = "UserName_1_UPDATED";
-    // updates['email'] = "NEW_email@email.com";
-
-    // firebase.database().ref('users/1').update(updates);
-
-    // // TODO: Use push to add a child element
-    // // https://firebase.google.com/docs/reference/node/firebase.database.Reference#push
-    // // with a previous id of '1', this generated the key of 'MD6yX0XNX7riPu2-_90' :)
-    // let newUserRef = firebase.database().ref('users').push();
-    // let newUserPromise = newUserRef.set(
-    //     {
-    //         username: "UserName_2",
-    //         email: "Email_2_@email.com",
-    //         profile_picture: "imageUrl_2"
-    //     }
-    // );
-
-    // newUserPromise.then(
-    //     function () {
-    //         console.log('Synchronization succeeded');
-    //     }) // jQuery style chaining here
-    //     .catch(function (error) {
-    //         console.log('Synchronization failed: ' + error);
-    //     });
-
-    // // DELETE
-    // // Now let's remove user #3 (added manually)
-    // // https://firebase.google.com/docs/reference/node/firebase.database.Reference#remove
-    // firebase.database().ref('users/3').remove()
-    //     .then(function () {
-    //         console.log("Remove succeeded.") // NOTE: This gets run even if there is no 'user 3'
-    //     })
-    //     .catch(function (error) {
-    //         console.log("Remove failed: " + error.message)
-    //     });
+    // DELETE
+    // https://firebase.google.com/docs/reference/node/firebase.database.Reference#remove
+    deleteObject(location: string, callWhenFinished: (err: Error | null) => void): void {
+        firebase.database().ref(location).remove()
+            .then(callWhenFinished)
+            .catch(callWhenFinished);
+    }
 }
 
 //export const FirebaseContext = React.createContext<Firebase | null>(null);
