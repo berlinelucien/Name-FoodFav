@@ -1,29 +1,3 @@
-npm install immutability-helper --save
-
-https://developers.google.com/maps/gmp-get-started
-
-npm install --save @react-google-maps/api
-# or
-yarn add @react-google-maps/api
-
-guide 
-https://react-google-maps-api-docs.netlify.app/#directionsservice
-
-gitHub for typescript
-https://github.com/JustFly1984/react-google-maps-api/tree/master/packages/react-google-maps-api/src
-
-
-### Calander
-install
-yarn add @fullcalendar/react
-yarn add @fullcalendar/daygrid
-yarn add @fullcalendar/timegrid
-yarn add @fullcalendar/interaction
-npm install
-
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
 ## Available Scripts
 
 In the project directory, you can run:
