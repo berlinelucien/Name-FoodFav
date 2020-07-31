@@ -25,9 +25,9 @@ const generateItems = (n:number) => {
         id:index,
         bounce: random*1.15,
         shape: "circle",
-        size: 20*random + sign*10 + 100,
-        position: {left:1600*random, top:800*random},
-        force: {x:30*random*sign, y:50*random*sign2}
+        size: Math.floor(20*random + sign*10 + 80),
+        position: {left:1380*random+100, top:580*(index/n)+100},/* Use (index/n) to decouple x and y values*/ 
+        force: {x:30*(index/n)*sign, y:50*random*sign2}
       }
     )
   })
@@ -38,7 +38,7 @@ class App extends React.Component<{}, {}> {
   ballPit:ball[];
   constructor(props){
     super(props);
-    this.ballPit = generateItems(60); /* Generate items for the simulated world */
+    this.ballPit = generateItems(50); /* Generate items for the simulated world */
   }
  
   render(){
@@ -56,7 +56,7 @@ class App extends React.Component<{}, {}> {
         <World
           height={800}
           width={1600}
-          gravity={[0,4]}
+          gravity={[0,1]}
           className="world"
         >
           {/* Create each item using the item data */
@@ -73,7 +73,7 @@ class App extends React.Component<{}, {}> {
               >
                 {/* Each "Item" can be any element you want. Once it's inside the "World"*/}
                 <img src={logo} alt="logoBall" 
-                     style={{border:2, borderStyle:"solid", borderColor:"cyan"}}/>
+                     style={{border:1, borderStyle:"solid", borderColor:"cyan"}}/>
               </Item>
           ))}
         </World>  
