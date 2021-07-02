@@ -1,17 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
-import React from 'react';
+import logo from "./logo.svg";
+import "./App.css";
+import React from "react";
 
-class App extends React.Component{
-
+class App extends React.Component {
   state = {
-    name: ""
-  }
+    name: "",
+  };
 
   // Change the state
   // Listening to a particular event
-  onChange = (e) => {
-    this.setState({ name: e.currentTarget.value });
+  onChangeEventHandler = (eventInfo) => {
+    this.setState({ name: eventInfo.currentTarget.value });
   };
 
   render() {
@@ -19,13 +18,15 @@ class App extends React.Component{
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Welcome {this.state.name}
-          </p>
-          <input type="text" value={this.state.name} onChange={this.onChange} />
+          <p>Welcome {this.state.name}</p>
+          <input
+            type="text"
+            value={this.state.name}
+            onChange={this.onChangeEventHandler}
+          />
         </header>
       </div>
-    )
+    );
   }
 }
 
