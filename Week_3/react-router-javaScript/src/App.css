@@ -28,6 +28,21 @@
   color: #61dafb;
 }
 
+.imgStyle {
+  object-fit: fill;
+ display:block;
+ 
+  width: 100%;
+  height: 100%;
+}
+
+h2,
+h3 {
+  text-align: center;
+  color: #4287f5;
+}
+
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -36,3 +51,4 @@
     transform: rotate(360deg);
   }
 }
+
