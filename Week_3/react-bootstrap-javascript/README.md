@@ -2,8 +2,6 @@
 
 ### npm install
 
-### npm start
-
 ### install react Bootstarp
 
 npm install react-bootstrap bootstrap@4.6.0
@@ -19,3 +17,5 @@ npm install react-router-dom
 ### install lottie
 
 npm install --save react-lottie
+
+### npm start
