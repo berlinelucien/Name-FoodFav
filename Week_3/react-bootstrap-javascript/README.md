@@ -2,7 +2,7 @@
 
 ### npm install
 
-### install react Bootstarp
+### install react Bootstrap
 
 npm install react-bootstrap bootstrap@4.6.0
 
