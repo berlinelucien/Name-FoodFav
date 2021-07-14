@@ -2,11 +2,11 @@
 
 ### npm install
 
-### install react Bootstrap
+### install React Bootstrap
 
 npm install react-bootstrap bootstrap@4.6.0
 
-### install
+### install holderjs
 
 npm install holderjs
 
