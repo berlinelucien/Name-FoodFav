@@ -2,6 +2,8 @@
 
 ### npm install
 
+(if you have issues, use `npm install --force`)
+
 ### install React Bootstrap
 
 npm install react-bootstrap bootstrap@4.6.0
