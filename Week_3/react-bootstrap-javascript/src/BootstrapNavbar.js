@@ -13,6 +13,7 @@ import BootstrapSelect from "./components/BootstrapSelect";
 import BootstrapCarousel from "./components/BootstrapCarousel";
 import BootstrapForm from "./components/BootstrapForm";
 import LottieAnimation from "./components/LottieAnimation";
+import OtherLottieAnimation from "./components/OtherLottie";
 
 class BootstrapNavbar extends React.Component {
   render() {
@@ -41,10 +42,15 @@ class BootstrapNavbar extends React.Component {
                     <Nav.Link href="/BootstrapForm">Form</Nav.Link>
                   </Nav.Item>
                   <Nav.Item>
-                    <Nav.Link href="/Nowhere" disabled>Disabled</Nav.Link>
+                    <Nav.Link href="/Nowhere" disabled>
+                      Disabled
+                    </Nav.Link>
                   </Nav.Item>
                   <Nav.Item>
                     <Nav.Link href="/LottieAnimation">Lottie</Nav.Link>
+                  </Nav.Item>
+                  <Nav.Item>
+                    <Nav.Link href="/OtherLottie">Lottie 2</Nav.Link>
                   </Nav.Item>
                 </Nav>
               </Navbar.Collapse>
@@ -74,6 +80,9 @@ class BootstrapNavbar extends React.Component {
               </Route>
               <Route path="/LottieAnimation">
                 <LottieAnimation />
+              </Route>
+              <Route path="/OtherLottie">
+                <OtherLottieAnimation />
               </Route>
             </Switch>
           </Container>
