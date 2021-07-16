@@ -1,10 +1,11 @@
 import React from "react";
 import { createTheme } from "@fluentui/react";
 import {
-  Customizations,
+  ThemeProvider,
   DefaultButton,
   PrimaryButton,
   Toggle,
+  Separator,
 } from "@fluentui/react";
 
 const myTheme = createTheme({
@@ -34,9 +35,23 @@ const myTheme = createTheme({
   },
 });
 
-class MyContent extends React.Component {
+class ThemedExample extends React.Component {
   render() {
-    Customizations.applySettings({ theme: myTheme });
+    return (
+      <div>
+        <ThemeProvider theme={myTheme}>
+          <DefaultButton text="DefaultButton" />
+          <PrimaryButton text="PrimaryButton" />
+          <Toggle label="Enabled" />
+          <Toggle label="Disabled" disabled={true} />
+        </ThemeProvider>
+      </div>
+    );
+  }
+}
+
+class NormalExample extends React.Component {
+  render() {
     return (
       <div>
         <DefaultButton text="DefaultButton" />
@@ -48,15 +63,59 @@ class MyContent extends React.Component {
   }
 }
 
-class ThemeExample extends React.Component {
+const headacheTheme = createTheme({
+  palette: {
+    themePrimary: "#f20a57",
+    themeLighterAlt: "#fef5f8",
+    themeLighter: "#fdd6e3",
+    themeLight: "#fbb3cb",
+    themeTertiary: "#f76998",
+    themeSecondary: "#f4266a",
+    themeDarkAlt: "#da094e",
+    themeDark: "#b80742",
+    themeDarker: "#880531",
+    neutralLighterAlt: "#dedfe7",
+    neutralLighter: "#dadce3",
+    neutralLight: "#d1d3da",
+    neutralQuaternaryAlt: "#c3c4cb",
+    neutralQuaternary: "#babbc2",
+    neutralTertiaryAlt: "#b2b4ba",
+    neutralTertiary: "#f1fcc2",
+    neutralSecondary: "#e4f987",
+    neutralPrimaryAlt: "#d8f651",
+    neutralPrimary: "#d3f53b",
+    neutralDark: "#a0ba2d",
+    black: "#768921",
+    white: "#e4e6ed",
+  },
+});
+
+class HeadacheExample extends React.Component {
   render() {
     return (
-      <div className="App">
-        <p>Hello world!</p>
-
-        <MyContent />
+      <div>
+        <ThemeProvider theme={headacheTheme}>
+          <DefaultButton text="DefaultButton" />
+          <PrimaryButton text="PrimaryButton" />
+          <Toggle label="Enabled" />
+          <Toggle label="Disabled" disabled={true} />
+        </ThemeProvider>
       </div>
     );
   }
 }
-export default ThemeExample;
+class ThirdExample extends React.Component {
+  render() {
+    return (
+      <div>
+        <Separator>'Normal', unstyled FluentUI:</Separator>
+        <NormalExample />
+        <Separator>Styled FluentUI:</Separator>
+        <ThemedExample />
+        <Separator>Headache Inducing Style:</Separator>
+        <HeadacheExample />
+      </div>
+    );
+  }
+}
+export default ThirdExample;
