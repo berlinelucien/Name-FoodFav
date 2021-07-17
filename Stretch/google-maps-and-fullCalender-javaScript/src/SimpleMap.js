@@ -28,29 +28,6 @@ const icons = {
             icon: iconBase + 'beachflag.png'
           }
         };
-//App States Types
-// interface defaultPosition{
-//   lat:number,
-//   lng:number
-// }
-// interface places{
-//   position:defaultPosition
-//   id: number,
-//   name: string,
-//   description: string,
-//   imgSrc:any,
-//   address:string,
-//   moreInfo:string,
-//   type:string,
-// }
-// interface IState{
-//   center:defaultPosition,
-//   defaultZoom:number,
-//   infoFlag: boolean,
-//   places: Array<places>, //
-//   myInfoWindow?: places, //the last marker clicked in the array, infoWindow gets updated.
-// }
-
 
 class SimpleMap extends Component{
   constructor(props, state){
@@ -147,7 +124,7 @@ class SimpleMap extends Component{
         <div className="demo-app-main">
           <div className="containerStyle">
             <LoadScript
-              googleMapsApiKey="AIzaSyBP8ttbVDsfvhR21sZepRnoucWpIG_vHfc"
+              googleMapsApiKey="Add Maps API Key here"
               language="en"
               libraries={["places"]}
             >
