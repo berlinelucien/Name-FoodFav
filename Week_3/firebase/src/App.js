@@ -44,8 +44,7 @@ class App extends React.Component {
       return;
     }
 
-    users = Object.values(users);
-    console.log("Users: " + users);
+    console.log(users);
     for (var iUser in users) {
       const user = users[iUser];
       console.log("User: " + user);

@@ -32,12 +32,11 @@ export class MyFirebase {
         email: eml,
         profile_picture: profilePicURL,
       })
-      .then(
-        () => {
-          console.log("Added the new user successfully!");
-        },
-        (reason) =>
-          console.log("ERROR: Did NOT add the user.  Reason: " + reason)
+      .then(() => {
+        console.log("Added the new user successfully!");
+      })
+      .catch((reason) =>
+        console.log("ERROR: Did NOT add the user.  Reason: " + reason)
       );
   }
 
@@ -50,14 +49,11 @@ export class MyFirebase {
         email: eml,
         profile_picture: profilePicURL,
       })
-      .then(
-        () => {
-          console.log("Added the BRAND NEW new user successfully!");
-        },
-        (reason) =>
-          console.log(
-            "ERROR: Did NOT add the brand new user.  Reason: " + reason
-          )
+      .then(() => {
+        console.log("Added the BRAND NEW new user successfully!");
+      })
+      .catch((reason) =>
+        console.log("ERROR: Did NOT add the brand new user.  Reason: " + reason)
       );
   }
 
