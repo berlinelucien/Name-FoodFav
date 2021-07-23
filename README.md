@@ -2,7 +2,7 @@
 
 These samples are for the [TNT Curriculum](https://github.com/tnt-summer-academy/Curriculum). Some are used in projects and others are for reference.
 
-# Contributing To This Repo
+# Contributing to This Repo
 
 This project welcomes contributions and suggestions. Before you make a contribution, check out the [contribution guide in CONTRIBUTING.md](https://github.com/tnt-summer-academy/Samples/blob/main/CONTRIBUTING.md) for best practices.
 
