@@ -1,64 +1,65 @@
-import { getAuth, onAuthStateChanged } from "firebase/auth";
 import firebase from "firebase";
-import React from "react";
+import "firebase/auth";
 
-    //You can replace the function signature with
-    //function signInWithEmailPassword(email, pass)
-    function signInWithEmailPassword() {
-        var email = "test@example.com";
-        var password = "hunter2";
+    export class Auth {
+
+
+    signInWithEmailPassword(email, password) {
         // [START auth_signin_password]
         firebase.auth().signInWithEmailAndPassword(email, password)
           .then((userCredential) => {
             // Signed in
-            var user = userCredential.user;
+            //var user = userCredential.user;
             // ...
           })
           .catch((error) => {
             var errorCode = error.code;
             var errorMessage = error.message;
+            console.log(errorCode+errorMessage)
           });
         // [END auth_signin_password]
       }
       
     //You can replace the function signature with
     //function signInWithEmailPassword(email, pass)
-      function signUpWithEmailPassword() {
-        var email = "test@example.com";
-        var password = "hunter2";
+    signUpWithEmailPassword(email, password) {
         // [START auth_signup_password]
         firebase.auth().createUserWithEmailAndPassword(email, password)
           .then((userCredential) => {
             // Signed in 
             var user = userCredential.user;
+            console.log(user)
             // ...
           })
           .catch((error) => {
             var errorCode = error.code;
             var errorMessage = error.message;
+            console.log(errorCode+errorMessage)
             // ..
           });
         // [END auth_signup_password]
       }
       
-    function signOut() {
+    signOut() {
         // [START auth_sign_out]
         firebase.auth().signOut()
         .then(() => {
           // Sign-out successful.
+          console.log('signout successful')
         }).catch((error) => {
           // An error happened.
+          console.log(error)
         });
         // [END auth_sign_out]
       }
       
-    function authStateListener() {
+    authStateListener() {
         // [START auth_state_listener]
         firebase.auth().onAuthStateChanged((user) => {
           if (user) {
             // User is signed in, see docs for a list of available properties
             // https://firebase.google.com/docs/reference/js/firebase.User
-            var uid = user.uid;
+            //var uid = user.uid;
             // ...
           } else {
             // User is signed out
@@ -68,7 +69,7 @@ import React from "react";
         // [END auth_state_listener]
       }
       
-    function currentUser() {
+    currentUser() {
         // [START auth_current_user]
         const user = firebase.auth().currentUser;
       
@@ -76,8 +77,11 @@ import React from "react";
           // User is signed in, see docs for a list of available properties
           // https://firebase.google.com/docs/reference/js/firebase.User
           // ...
+          return user
         } else {
           // No user is signed in.
+          return undefined
         }
         // [END auth_current_user]
       }
+}
