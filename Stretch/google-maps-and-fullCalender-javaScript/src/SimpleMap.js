@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { GoogleMap, LoadScript, Marker, InfoWindow, StandaloneSearchBox } from '@react-google-maps/api';
+import { GoogleMap, LoadScript, Marker, InfoWindow } from '@react-google-maps/api';
 import './MyDemo.css'
 
 const containerStyle = {
@@ -78,15 +78,15 @@ class SimpleMap extends Component{
         <InfoWindow
           onLoad={this.onLoad}
           onCloseClick={() => { this.setState({ infoFlag: false }) }} //Keeps infoWindow closed before Click
-          position={this.state.myInfoWindow?.position} //Puts infoWindow on location position {lng and lat }
+          position={this.state.myInfoWindow.position} //Puts infoWindow on location position {lng and lat }
         >
           {/* Show selected Data on the info window */}
           <div style={{backgroundColor: 'pink', opacity: 1, padding:3 }}>
-          <p><b>{this.state.myInfoWindow?.name}</b></p>
-          <p> { <p><img src={this.state.myInfoWindow?.imgSrc}/></p>}</p>
+          <p><b>{this.state.myInfoWindow.name}</b></p>
+          <p> { <p><img src={this.state.myInfoWindow.imgSrc}/></p>}</p>
 
-            <p><a href={this.state.myInfoWindow?.imgSrc}>Learn More</a></p>
-            <p>{this.state.myInfoWindow?.address}</p>
+            <p><a href={this.state.myInfoWindow.imgSrc}>Learn More</a></p>
+            <p>{this.state.myInfoWindow.address}</p>
           </div>
         </InfoWindow>;
     } 

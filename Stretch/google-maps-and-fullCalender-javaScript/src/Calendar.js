@@ -1,5 +1,5 @@
 import React from 'react'
-import FullCalendar, { EventApi, DateSelectArg, EventClickArg, EventContentArg, formatDate } from '@fullcalendar/react'
+import FullCalendar from '@fullcalendar/react'
 import dayGridPlugin from '@fullcalendar/daygrid'
 import interactionPlugin from '@fullcalendar/interaction'
 import { INITIAL_EVENTS, createEventId } from './event-utils'
@@ -20,7 +20,7 @@ export default class Calendar extends React.Component {
         <div className='demo-app-main'>
           <FullCalendar
             plugins={[dayGridPlugin,interactionPlugin]}
-             initialView='dayGridMonth'
+            initialView='dayGridMonth'
             editable={true}
             selectable={true}
             selectMirror={true}
