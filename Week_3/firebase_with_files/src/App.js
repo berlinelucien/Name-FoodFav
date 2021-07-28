@@ -281,6 +281,14 @@ class App extends React.Component {
                                     // ...we can reload list of all images
                                     db.getAllImages(this.receiveNextImage);
                                 });
+
+                                // Or, we could just add the new file to the end of the list:
+                                // db.storeFile((urlOfNewlyUploadedImage) => {
+                                //     // ...we can add the image to the array:
+                                //     this.receiveNextImage(
+                                //         urlOfNewlyUploadedImage
+                                //     );
+                                // });
                             } else console.log("No file selected!");
                         }}
                     >
