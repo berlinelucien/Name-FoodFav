@@ -16,7 +16,7 @@ export class CredentialsPage extends React.Component {
         console.log(
           "Username: " +
             this.usernameRef.current.value +
-            " Password: " +
+            "Password: " +
             this.passwordRef.current.value
         );
     
@@ -30,12 +30,12 @@ export class CredentialsPage extends React.Component {
         console.log(
           "Username: " +
             this.loginUsernameRef.current.value +
-            " Password: " +
+            "Password: " +
             this.loginPasswordRef.current.value
         );
     
         let auth = new Auth()
-        auth.signInWithEmailPassword(this.loginUsernameRef.current.value, this.loginPasswordRef.current.value )
+        auth.signInWithEmailPassword(this.loginUsernameRef.current.value, this.loginPasswordRef.current.value)
         this.props.onAuthStateChanged()
       };
   render() {

@@ -1,15 +1,16 @@
 import firebase from "firebase";
 import "firebase/auth";
+import history from '../History'
 
     export class Auth {
-
-
     signInWithEmailPassword(email, password) {
         // [START auth_signin_password]
         firebase.auth().signInWithEmailAndPassword(email, password)
           .then((userCredential) => {
             // Signed in
-            //var user = userCredential.user;
+            var user = userCredential.user;
+            console.log(user)
+            history.push('/welcome')
             // ...
           })
           .catch((error) => {
@@ -29,13 +30,14 @@ import "firebase/auth";
             // Signed in 
             var user = userCredential.user;
             console.log(user)
+            history.push('/welcome')
             // ...
           })
           .catch((error) => {
             var errorCode = error.code;
             var errorMessage = error.message;
             console.log(errorCode+errorMessage)
-            // ..
+            // Might give call back depending on error
           });
         // [END auth_signup_password]
       }

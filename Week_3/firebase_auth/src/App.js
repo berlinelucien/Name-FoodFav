@@ -1,10 +1,13 @@
 import React from "react";
+import { Switch, Route, Router } from "react-router-dom";
 import "./App.css";
 import firebaseApp from "firebase/app";
 import firebase from "firebase";
 import { CredentialsPage } from "./pages/CredentialsPage";
 import { WelcomePage } from "./pages/WelcomePage";
 import { Auth } from "./Auth/Auth";
+import { PrivateRoute } from "./Routes/PrivateRoute";
+import history from './History'
 
 var firebaseConfig = {
   apiKey: "REPLACE THIS WITH THE CODE YOU COPIED FROM THE FIREBASE WEBSITE",
@@ -18,6 +21,7 @@ var firebaseConfig = {
     "REPLACE THIS WITH THE CODE YOU COPIED FROM THE FIREBASE WEBSITE",
   appId: "REPLACE THIS WITH THE CODE YOU COPIED FROM THE FIREBASE WEBSITE",
 };
+
 class App extends React.Component {
 
   constructor(props) {
@@ -32,14 +36,23 @@ class App extends React.Component {
     }
   }
   render() {
-    if (this.state.currentUser !== null) {
-        return <WelcomePage onAuthStateChanged={this.onAuthStateChanged}/>
-    }
 
-    else {
-      return <CredentialsPage onAuthStateChanged={this.onAuthStateChanged} />
-    }
-  }
+    return (
+      <Router history={history}>
+        <Switch>
+          <Route 
+            exact 
+            path={'/'} 
+            component={() => <CredentialsPage onAuthStateChanged={this.onAuthStateChanged}/>}
+          />
+          <PrivateRoute
+            path={'/welcome'}
+            render={() => <WelcomePage onAuthStateChanged={this.onAuthStateChanged}/>}
+            user={this.state.user}
+          />
+        </Switch>
+      </Router>
+  )}
 
   onAuthStateChanged = () => {
     firebase.auth().onAuthStateChanged((user) => {
@@ -57,4 +70,5 @@ class App extends React.Component {
       });
   } 
 }
+
 export default App;
